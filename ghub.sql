@@ -60,7 +60,7 @@ FROM schedule_rules;
 CREATE TEMP FUNCTION ExtractHours(json STRING)
 RETURNS ARRAY<STRING>
 LANGUAGE js AS """
-  const obj = JSON.parse(json);  // ✅ parse JSON string
+  const obj = JSON.parse(json);  // parse JSON string
   const rules = obj.availability_by_catalog?.STANDARD_DELIVERY?.schedule_rules || [];
   
   return rules.map(rule => {
